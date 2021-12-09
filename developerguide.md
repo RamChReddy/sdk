@@ -25,5 +25,4 @@ Table of contents to EC developer guide (self managed subscriptions) -
   - Binary process
 - Trobleshooting tips
   - Common issues
-  - Health page
-   
+  - Health page                                                                                                                                                                    
