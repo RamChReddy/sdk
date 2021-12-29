@@ -253,7 +253,8 @@ Content under this heading is under development.
 
 ## Binary process
 
-Content under this heading is under development.
+Running a binary file includes downloading the file (an agent) and executing the script.
+When you execute a binary, a bearer token will be generated which will authenticate the transaction. Only after authentication through a binary token will the agent be able to establish a super connection with a gateway.
 
 # Common Issues &amp; Troubleshooting tips:
 
