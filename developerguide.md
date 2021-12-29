@@ -355,6 +355,9 @@ The Predix gateway has a defined limit of 50 connections. Therefore, you either 
 
 ## Health page
 
-The content under this heading is under development
+You can find the gateway information by opening any server script or client script. If you want to check the health of an EC gateway, you can log into the Cloud Foundry environment to see whether the subscription is in effect or not.
+The other way to check the health of a gateway is to type the DNS name followed by "/health".
+https://agent-213-x1-gateway.run.aws-usw02-pr.ice.predix.io/health
+If the above URL returns a JSON response, we can safely assume that the gateway is healthy (up and running). If not, there is some problem. 
 
 GE Confidential
