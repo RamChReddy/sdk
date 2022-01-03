@@ -270,19 +270,19 @@ While using the Enterprise Connect service, you may face some problems. The foll
 
 When the Enterprise Connect gateway (either Predix or AWS) is down, all the EC connections from the gateway will be lost. This may occur if the Predix gateway application is mistakenly stopped, or if the AWS gateway process is killed. When this situation occurs, the operations team has to restart the gateway manually.
 
-1. **The EC Agent is Down:**
+2. **The EC Agent is Down:**
 
 When the EC agent is down, the connectivity between the EC service and the agent gets snapped. The reasons behind the failure could be occasional heavy loads or processes getting killed. The operations team needs to check the connection details and identify which agent went down. And, thereafter, deploy the restage script to bring the agent up.
 
-1. **The Client Agent Fails:**
+3. **The Client Agent Fails:**
 
 When the Client Agent fails to start or throws an error while making a connection, the gateway remains out of service. In that case, the agent script needs to be corrected and a restage script needs to be deployed to restore the service.
 
-1. **When the Server Agent Fails:**
+4. **When the Server Agent Fails:**
 
 When the Server Agent fails to start or throws an error while making a connection, the gateway remains out of service. In that case, the agent script needs to be corrected and a restaging script needs to be deployed to bring the service back.
 
-1. **Unable to Make EC Connection with VLAN:**
+5. **Unable to Make EC Connection with VLAN:**
 
 When you are unable to make an EC connection with VLAN, you need to check the configuration.
 
@@ -294,7 +294,7 @@ Carry out the following checks if an EC connection is not established with VLAN:
 
 The client application must use the target IP and port to connect (not the client host IP and lPT)
 
-1. **The TLS Plugin Doesn&#39;t Function:**
+6. **The TLS Plugin Doesn&#39;t Function:**
 
 If the TLS Plugin is not able to make a connection with TLS (Transport Layer Security), then you need to check the configuration.
 
@@ -303,39 +303,39 @@ Please carry out the following checks to fix the problem.
 - The yml file must be placed alongside the server script.
 - Check the format of the plugins.yml file
 
-1. **The CF Service is Down:**
+7. **The CF Service is Down:**
 
 If the CF (Cloud Foundry) service is down, the EC service for the related subscription goes down. The failure will impact all the connections under the subscription, and the operations team has to restage the subscription application to bring the service back.
 
-1. **The Broker App for Predix EC is Down:**
+8. **The Broker App for Predix EC is Down:**
 
 Every Predix service has a broker application, and if the broker application for the Predix EC service is down, you will not be able to create new subscriptions. If the CF (Cloud Foundry) service broker fails, you need to reach out to the Predix support team for help.
 
-1. **The Predix Cloud Foundry is Down:**
+9. **The Predix Cloud Foundry is Down:**
 
 If the Predix Cloud Foundry is down, the entire Predix platform will be out of service and, as a result, all the EC services will be adversely affected. Therefore, to resolve the network issue, you need to reach out to the Predix support team. Once the platform is back on track, all EC connections will be back to normal.
 
-1. **Predix UAA Service is Down:**
+10. **Predix UAA Service is Down:**
 
 When the Predix UAA (User Account and Authentication) service is down, it impacts all new EC connections. The UAA service may be down due to issues in the Predix environment. Subscribe to the status alerts at **status.predix.io** to receive notifications when any Predix service goes down. Since it is an automated alert, no action is needed by the admin team.
 
-1. **The VM, Where the EC Agent is running, goes down:**
+11. **The VM, Where the EC Agent is running, goes down:**
 
 When the Virtual Machine (VM), where the EC Agent is installed goes out of service, it affects the EC connection for agents installed in that VM. Normally, the VMs in the cloud go down but come back immediately. One way to overcome this problem is to create bootstrap scripts to install EC agents and make them run.
 
-1. **Docker Containers Go Down:**
+12. **Docker Containers Go Down:**
 
 When Docker containers go down, the EC connection where the agent is running may get interrupted. As a docker container comes back automatically on its own after it gets destroyed, no action is required on your part.
 
-1. **Proxy Issues:**
+13. **Proxy Issues:**
 
 Proxy URLs must be used only when connecting from on premise resources and should not be used while connecting from external environments such as AWS or Azure. Any misuse may result in a failure of the EC connection. If the proxy is configured correctly, you should be able to get the UAA token properly. If not, try again with another proxy URL.
 
-1. **Network Goes Down:**
+14. **Network Goes Down:**
 
 Network outages are rare. However, if it indeed occurs, all connections via that network will be disconnected. You need to reach out to the core tech team to get the problem fixed.
 
-1. **Connection Fails Suddenly:**
+15. **Connection Fails Suddenly:**
 
 Multiple reasons may cause an EC connection to fail. Carry out the following checks when there is a disruption to an EC connection.
 
@@ -348,15 +348,15 @@ Multiple reasons may cause an EC connection to fail. Carry out the following che
 - If gateway/server/client logs say, &quot;Empty cert found,&quot; check with the product team to update the certs for EC service.
 - Agent version must be same for gateway, server, and client
 
-1. **Parental EC Service is Down:**
+16. **Parental EC Service is Down:**
 
 When the parental Predix EC service is down, you can&#39;t create new subscriptions. You will need to reach out to the Predix support team to get the problem fixed.
 
-1. **Certificate Expiry:**
+17. **Certificate Expiry:**
 
 When a certificate for a subscription expires, all the EC connections created under that subscription will be lost. Tracking the certificate expiry and its timely renewal are required to resolve the problem.
 
-1. **Connections More than the Specified Limit:**
+18. **Connections More than the Specified Limit:**
 
 The Predix gateway has a defined limit of 50 connections. Therefore, you either need to restrict the number of connections to fifty or send an alert when the upper limit is reached. There is a possibility of connection failure when the number of connections surpasses the fifty mark.
 
