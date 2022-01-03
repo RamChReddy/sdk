@@ -115,7 +115,7 @@ Applications that run in the Cloud Foundry environment gain access to bound serv
 
 In the below diagram, we have a client application running on the network, and the application wants to access a network resource that could be a database, an SFDC server, or could even be an API service provider. If we want to access the resource from the client application, we need to install some agents, like the Server Agent on the side of the network resource, so that it can access the resource over the TCP protocol. Thereafter, it will translate the traffic over TCP into HTTPS and then the data will be sent to the Client Agent via the EC gateway, from where it will be accessed by the client application.
 
-Add EC Scopes to UAA:
+**Add EC Scopes to UAA:**
 
 Whether it is a client agent or a server agent, before using the Enterprise Connect (EC) service, it needs to get authenticated by a UAA (User Account and Authentication) service.
 
