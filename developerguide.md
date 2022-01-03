@@ -241,15 +241,21 @@ Such an arrangement is termed a &quot;Fuse Mode&quot; or &quot;direct connection
 
 # Deployment options
 
-Content under this heading is under development.
+Enterprise Connect is a versatile service that has the capability to connect any two networks governed by different transmission protocols. Though it is offered as part of the Predix Cloud Foundry environment, it can be deployed even on AWS and Azure environments.
+There are three options, namely Cloud Foundry, EKS/AKS, and Binary Process, available for the purpose of deploying the Enterprise Connect service. 
 
 ## Cloud Foundry
 
-Content under this heading is under development.
+In order to deploy the Enterprise Connect service in Cloud Foundry, you need to meet some prerequisites. They are:
+•	An active account in predix.io
+•	Cloud Foundry CLI installed
+
 
 ## EKS/AKS
 
-Content under this heading is under development.
+You can deploy the Enterprise Connect service even through the EKS (Amazon Elastic Kubernetes Service) and AKS (Azure Kubernetes Service).
+These two services offer cloud-based container orchestration through Kubernetes.  They not only automate the deployment of the Enterprise Connect service, but also manage and scale it.
+
 
 ## Binary process
 
